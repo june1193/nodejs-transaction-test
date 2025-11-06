@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Transaction API Test</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' http://localhost:3001; style-src 'self' 'unsafe-inline';">
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial,sans-serif;max-width:720px;margin:20px auto;padding:0 12px}
+    fieldset{margin:12px 0}
+    label{display:block;margin:6px 0}
+    input{padding:6px 8px}
+    button{padding:6px 10px;margin-top:6px}
+    pre{background:#f6f8fa;padding:10px;white-space:pre-wrap;border:1px solid #e5e7eb;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>Transaction API Test</h1>
+  <p>Same-origin 테스트 페이지입니다. 아래 폼으로 API를 호출하세요.</p>
+
+  <fieldset>
+    <legend>Health</legend>
+    <button id="btnHealth">GET /health</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Accounts</legend>
+    <button id="btnAccounts">GET /accounts</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Deposit (POST /deposit)</legend>
+    <label>accountId <input id="d_id" type="number" value="1"></label>
+    <label>amount <input id="d_amt" type="number" value="100"></label>
+    <button id="btnDeposit">Deposit</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Withdraw (POST /withdraw)</legend>
+    <label>accountId <input id="w_id" type="number" value="2"></label>
+    <label>amount <input id="w_amt" type="number" value="50"></label>
+    <button id="btnWithdraw">Withdraw</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Transfer (POST /transfer)</legend>
+    <label>fromAccountId <input id="t_from" type="number" value="1"></label>
+    <label>toAccountId <input id="t_to" type="number" value="2"></label>
+    <label>amount <input id="t_amt" type="number" value="200"></label>
+    <button id="btnTransfer">Transfer</button>
+  </fieldset>
+
+  <h3>Response</h3>
+  <pre id="out"></pre>
+
+  <script src="/test.js"></script>
+</body>
+</html>
+
+
